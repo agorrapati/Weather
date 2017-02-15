@@ -86,12 +86,12 @@ public class HandleJSON {
             JSONObject sys  = reader.getJSONObject("sys");
             country = sys.getString("country");
 
-            JSONObject main  = reader.getJSONObject("main");
-            temperature = main.getString("temp");
-            pressure = main.getString("pressure");
-            humidity = main.getString("humidity");
-            temp_min=main.getString("temp_min");
-            temp_max=main.getString("temp_max");
+            JSONObject obj  = reader.getJSONObject("main");
+            temperature = obj.getString("temp");
+            pressure = obj.getString("pressure");
+            humidity = obj.getString("humidity");
+            temp_min=obj.getString("temp_min");
+            temp_max=obj.getString("temp_max");
 
             JSONArray weather=reader.getJSONArray("weather");
             for(int i=0;i<weather.length();i++)
