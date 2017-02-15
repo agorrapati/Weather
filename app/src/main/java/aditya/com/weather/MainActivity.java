@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -47,7 +46,6 @@ public class MainActivity extends ActionBarActivity {
     public void getWeather(View view)
     {
         Toast.makeText(getApplicationContext(),"Checking for the weather",Toast.LENGTH_SHORT).show();
-        Log.d("Weather","Checking for the Weather ");
         Intent i=new Intent(MainActivity.this,Weather.class);
         i.putExtra(URL,location.getText().toString());
         startActivity(i);

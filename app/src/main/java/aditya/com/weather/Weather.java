@@ -3,38 +3,32 @@ package aditya.com.weather;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 
 public class Weather extends ActionBarActivity {
-    private String url="http://api.openweathermap.org/data/2.5/weather?q=";
+    private String url="http://api.openweathermap.org/data/2.5/weather?q=",appid="&appid=40a6c732c65ba3f89950e091e80e9d0f";
     TextView tv,count,temp,desc,min,max;
     HandleJSON handleJSON;
     public String locationURL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         tv=(TextView)findViewById(R.id.textView);
         Intent intent=getIntent();
-        String locationalUrl = intent.getStringExtra(MainActivity.URL);
-        locationURL=locationalUrl;
+        locationURL=intent.getStringExtra(MainActivity.URL);
         count=(TextView)findViewById(R.id.textView);
         temp=(TextView)findViewById(R.id.textView3);
         desc=(TextView)findViewById(R.id.description);
         min=(TextView)findViewById(R.id.min);
         max=(TextView)findViewById(R.id.max);
-        String finalUrl=url+locationalUrl;
-        Log.d("Tag", finalUrl);
+        String finalUrl=url+locationURL+appid;
         getWeather(finalUrl);
     }
 

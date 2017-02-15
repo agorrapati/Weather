@@ -100,13 +100,8 @@ public class HandleJSON {
                     //Pulling items from the array
                    climate = one.getString("main");
                  description = one.getString("description");
-
             }
-
-
             parsingComplete = false;
-
-
         }
         catch (Exception ex)
         {
@@ -132,12 +127,9 @@ public class HandleJSON {
                     // Starts the query
                     httpURLConnection.connect();
                     InputStream stream = httpURLConnection.getInputStream();
-
                     String data = convertStreamToString(stream);
-
                     readAndParseJSON(data);
                     stream.close();
-
                 }
                 catch (Exception ex)
                 {
